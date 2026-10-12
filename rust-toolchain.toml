@@ -1,0 +1,6 @@
+# gpui-fast needs a recent stable Rust (it uses std::hint::cold_path); this is the
+# toolchain gpui-fast itself is built with. rustup installs it on first build.
+[toolchain]
+channel = "1.98.1"
+profile = "minimal"
+targets = ["x86_64-pc-windows-msvc"]

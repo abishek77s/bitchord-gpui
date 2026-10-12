@@ -8,7 +8,7 @@ Windows is the target.
 
 ## Run
 
-Needs Rust (the MSVC toolchain on Windows).
+Needs rustup with the MSVC toolchain on Windows. `rust-toolchain.toml` pins Rust 1.98.1, which gpui-fast requires; rustup fetches it on the first build.
 
 ```sh
 cargo run --release
