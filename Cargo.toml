@@ -1,0 +1,20 @@
+[package]
+name = "bitchord-gpui"
+version = "0.1.0"
+edition = "2024"
+description = "BitChord's now-playing page, rebuilt on gpui-fast: pick a local file and play it."
+license = "GPL-3.0-only"
+publish = false
+
+[dependencies]
+gpui = { package = "gpui-fast", version = "0.1.7" }
+gpui_platform = { package = "gpui-fast-platform", version = "0.1.7" }
+anyhow = "1"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "bmp", "gif", "webp"] }
+lofty = "0.22"
+rfd = "0.15"
+rodio = { version = "0.20", default-features = false, features = ["symphonia-all"] }
+
+# Linux only so the page can be previewed off Windows; Windows needs no features.
+[target.'cfg(target_os = "linux")'.dependencies]
+gpui_platform = { package = "gpui-fast-platform", version = "0.1.7", features = ["x11"] }
